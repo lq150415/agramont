@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>Hospital Agramont</title>
+	{!! Html::style('assets/css/bootstrap.css') !!}
+    {!! Html::style('css/table/jquery.dataTables.css')!!}
+      <link href="font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    {!! Html::style('assets/css/sidebar.css') !!}
+    {!! Html::script('assets/js/ajax.js')!!}
+    {!! Html::script('assets/js/sidebar2.js')!!}
+{!! Html::script('js/table/jquery.dataTables.js')!!}
+    {!! Html::script('assets/js/bootstrap.js')!!}
+
+</head>
+<body style="background-color:#EFEEEE">
+
+ <nav class="navbar navbar-inverse no-margin" style="border-radius: 0; background-color: #000;">
+    <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header fixed-brand" >
+                    
+                    <a class="navbar-brand" href="/" style="color: #966E30; padding-left: 14%; font-size: 25px;"><span class="fa fa-medkit"></span> <b>AGRAMONT</b></a>
+                </div><!-- navbar-header-->
+ 
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            
+                </div><!-- bs-example-navbar-collapse-1 -->
+    </nav>
+   
+        <!-- Sidebar -->
+
+        <!-- Page Content -->
+        
+                    
+                       <div class="container">
+<div  style="width:100%; background:#fff; margin-top:1%;">
+    <div class="alert alert-info" style="font-size:23px;">Evaluacion Psicologica <a style="margin-left:50%;" href="../../<?php echo $id;?>" class="btn btn-primary">Ver historial clinico</a><a style="margin-left:2%;" href="<?php echo $ids;?>/finalizar" class="btn btn-danger">Finalizar</a></div>
+    <div class="alert panel panel-success cuerpo" style="background:#fff; margin-top:-2.7%">
+        <form class="form-horizontal" action="{{$ids}}/pdfpsico" method="post" target="_blank">
+            <fieldset style="background-color:#BEEABE; padding: 2%;">
+                <legend>
+                    A) DATOS PERSONALES
+                </legend>
+                <div class="form-group">
+                    <label class="col-lg-2">Apellido paterno: </label>
+                    <div class="col-lg-3">
+                        <input type="text" class="form-control" name="" readonly="readonly" value="{{ $paciente->APA_PAC}}">
+                    </div>
+                    <label class="col-lg-2">Apellido materno: </label>
+                    <div class="col-lg-3">
+                        <input type="text" class="form-control" readonly="readonly" name="" value="{{ $paciente->AMA_PAC}}">
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2">Nombres: </label>
+                    <div class="col-lg-3">
+                        <input type="text" readonly="readonly" class="form-control" name="" value="{{ $paciente->NOM_PAC}}">
+                    </div>
+                    <label class="col-lg-2">CI: </label>
+                    <div class="col-lg-3">
+                        <input type="text" class="form-control" readonly="readonly" name="" value="{{ $paciente->CI_PAC}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2">Lugar de nacimiento: </label>
+                    <div class="col-lg-3">
+                        <input required="required" type="text" class="form-control" name="lug_nac" placeholder="LUGAR">
+                    </div>
+                    <label class="col-lg-2">Fecha de nacimiento: </label>
+                    <div class="col-lg-2">
+                        <input type="text" readonly="readonly" class="form-control" name="" value="{{ $paciente->FEC_NAC}}">
+                    </div>                                   <label class="col-lg-1">Edad: </label>
+                    <div class="col-lg-1">
+                        <input type="text" readonly="readonly" class="form-control" name="" value="<?php 
+      $edad = \Carbon\Carbon::createFromFormat('Y-m-d', $paciente->FEC_NAC)->format('Y'); 
+      $edad2 = \Carbon\Carbon::createFromFormat('Y-m-d', $paciente->FEC_NAC)->format('m');
+      $edad3 = \Carbon\Carbon::createFromFormat('Y-m-d', $paciente->FEC_NAC)->format('d');
+      
+       echo $date = \Carbon\Carbon::createFromDate($edad,$edad2,$edad3)->age;
+       ?>">
+                    </div>                                  
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2">Profesion : </label>
+                    <div class="col-lg-3">
+                        <input type="text" class="form-control" name="" readonly="readonly" value="{{ $paciente->PRO_PAC}}">
+                    </div>
+                    <label class="col-lg-2">Fecha del examen : </label>
+                    <div class="col-lg-3">
+                        <input type="text" class="form-control" readonly="readonly" name="" value="{{ \Carbon\Carbon::now()->format('d-m-Y')}}">
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2">Direccion : </label>
+                    <div class="col-lg-9">
+                        <input type="text" class="form-control" name="" readonly="readonly" value="{{ $paciente->DOM_PAC}}">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset style="background-color:#B9DEE3; padding: 2%;">
+                <legend>B) HISTORIA FAMILIAR</legend>
+                <div class="form-group">
+                    <label class="col-lg-2">DESCRIPCION : </label>
+                    <div class="col-lg-9">
+                        <textarea rows="10" class="form-control" name="his_psi" required="yes"  value="{{ $paciente->PRO_PAC}}"></textarea>
+                    </div>
+            </fieldset>
+            <fieldset style="background-color:#E9EBBF; padding: 2%;">
+                <legend>C) EXAMEN PSICOLOGICO</legend>
+                <label for="ejemplo_email_3" class="col-lg-11 control-label" style="text-align:left">1. Coordinacion visomotora</label>
+<br/><br/>
+    <div class="form-control">
+  <label style="text-align:left; margin-right:10%;">
+    <input type="radio" name="opciones" id="opciones_1" value="ADECUADO" >
+    ADECUADO
+  </label>
+  <label style="margin-right:10%;">
+    <input type="radio" name="opciones" id="opciones_2" value="INADECUADO" >
+    INADECUADO 
+  </label>
+    <label>
+    <input type="radio" name="opciones" id="opciones_3" value="OBSERVACION">
+    OBSERVACION
+  </label>
+
+</div>
+ <label for="ejemplo_email_3" class="col-lg-11 control-label" style="text-align:left">2. Personalidad</label>
+<br/><br/>
+    <div class="form-control">
+  <label style="text-align:left; margin-right:10%;">
+    <input type="radio" name="opciones1" id="opciones_1" value="ADECUADO" >
+    ADECUADO
+  </label>
+  <label style="margin-right:10%;">
+    <input type="radio" name="opciones1" id="opciones_2" value="INADECUADO" >
+    INADECUADO 
+  </label>
+    <label>
+    <input type="radio" name="opciones1" id="opciones_3" value="OBSERVACION">
+    OBSERVACION
+  </label>
+
+</div>
+ <label for="ejemplo_email_3" class="col-lg-11 control-label" style="text-align:left">3. Atencion, concentracion, memoria y coordinacion</label>
+<br/><br/>
+    <div class="form-control">
+  <label style="text-align:left; margin-right:10%;">
+    <input type="radio" name="opciones2" id="opciones_1" value="ADECUADO" >
+    ADECUADO
+  </label>
+  <label style="margin-right:10%;">
+    <input type="radio" name="opciones2" id="opciones_2" value="INADECUADO" >
+    INADECUADO 
+  </label>
+    <label style="margin-right:10%;">
+    <input type="radio" name="opciones2" id="opciones_3" value="OBSERVACION">
+    OBSERVACION
+  </label>
+
+</div>
+ <label for="ejemplo_email_3" class="col-lg-11 control-label" style="text-align:left">4. Prueba de reaccion ante situaciones de estres y riesgo</label>
+<br/><br/>
+    <div class="form-control">
+  <label style="text-align:left; margin-right:10%;">
+    <input type="radio" name="opciones3" id="opciones_1" value="OPTIMO" >
+    OPTIMO
+  </label>
+  <label style="margin-right:10%;">
+    <input type="radio" name="opciones3" id="opciones_2" value="MEDIO" >
+    MEDIO 
+  </label>
+    <label>
+    <input type="radio" name="opciones3" id="opciones_3" value="INADECUADO">
+    INADECUADO
+  </label>
+  <label style="text-align:left; margin-right:10%;">
+    <input type="radio" name="opciones3" id="opciones_1" value="OBSERVACION" >
+    OBSERVACION
+  </label>
+  
+</div></fieldset> <br/><br/><br/>
+<fieldset style="background-color:#E3CFD3; padding: 2%;">
+    <legend>RESULTADO FINAL DE LA EVALUACION PSICOLOGICA</legend>
+    <div class="form-group">
+        <label class="col-lg-11">OBSERVACIONES:(EN ESTE ACAPITE SE DEBE INCORPORAR SI EL POSTULANTE ES APTO PARA CONDUCIR VEHICULO, SI NO FUERA APTO INDICAR LOS MOTIVOS)</label>
+        <div class="col-lg-11">
+            <textarea required="yes" name="rfi_psi" class="form-control" rows="3">APTO PARA CONDUCIR LA CATEGORIA " "</textarea>
+        </div>
+    </div>
+</fieldset>   
+<div class = "modal-footer">
+            <button type = "submit" target="_blank" class = "btn btn-primary" data-dismiss = "modal"><span class="glyphicon glyphicon-check"></span>
+              IMPRIMIR EVALUACION
+            </button>
+            
+            
+         </div>  
+        </form>          
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    
+
+	{!! Html::script('assets/js/sidebar2.js')!!}
+</body>
+</html>
