@@ -110,7 +110,7 @@ $(function(){
                 <li>
                     <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-male fa-stack-1x "></i></span> Pacientes</a>
                     <ul class="nav-pills nav-stacked" style="list-style-type:none;">
-                        <li><a href="{{ url('pacientessegip') }}"><span class="fa-stack fa-lg pull-left"><i class="fa fa-keyboard-o fa-stack-1x "></i></span>Registro examenes clinicos</a></li>
+                        <li><a href="{{ url('pacientesagramont') }}"><span class="fa-stack fa-lg pull-left"><i class="fa fa-keyboard-o fa-stack-1x "></i></span>Registro examenes clinicos</a></li>
                         <li><a href=""><span class="fa-stack fa-lg pull-left"><i class="fa fa-keyboard-o fa-stack-1x "></i></span>Registro laboratorios</a></li>
                         
  

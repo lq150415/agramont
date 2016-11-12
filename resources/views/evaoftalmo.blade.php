@@ -23,7 +23,7 @@
     <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header fixed-brand" >
                     
-                    <a class="navbar-brand" href="/Darsalud/public" style="color: #966E30; padding-left: 14%; font-size: 25px;"><span class="fa fa-medkit"></span> <b>AGRAMONT</b></a>
+                    <a class="navbar-brand" href="/" style="color: #966E30; padding-left: 14%; font-size: 25px;"><span class="fa fa-medkit"></span> <b>AGRAMONT</b></a>
                 </div><!-- navbar-header-->
  
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -212,15 +212,7 @@
                     </div>
                     </div>
                     </fieldset>
-<fieldset style="background-color:#E3CFD3; padding: 2%;">
-    <legend>RESULTADO FINAL DE LA EVALUACION OFTALMOLOGICA</legend>
-    <div class="form-group">
-        <label class="col-lg-11">OBSERVACIONES:(EN ESTE ACAPITE SE DEBE INCORPORAR SI EL POSTULANTE ES APTO PARA CONDUCIR VEHICULO, SI NO FUERA APTO INDICAR LOS MOTIVOS)</label>
-        <div class="col-lg-11">
-            <textarea required="yes" name="rfi_psi" class="form-control" rows="3">APTO PARA CONDUCIR LA CATEGORIA " "</textarea>
-        </div>
-    </div>
-</fieldset>   
+
 <div class = "modal-footer">
             <button type = "submit" target="_blank" class = "btn btn-primary" data-dismiss = "modal"><span class="glyphicon glyphicon-check"></span>
               IMPRIMIR EVALUACION

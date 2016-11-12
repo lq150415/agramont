@@ -16,7 +16,7 @@ Route::get('logout', 'Auth\AuthController@getLogout');
 
 Route::group(['middleware' => 'auth'], function () {
 Route::get('/',['as'=>'/','uses'=>'ClientesController@index']);
-Route::get('pacientessegip',['as'=>'pacientessegip','uses'=>'PacientesController@index']);
+Route::get('pacientesagramont',['as'=>'pacientesagramont','uses'=>'PacientesController@index']);
 Route::get('pacientesdarsalud','ClientesController@index3');
 Route::get('facturacion','ClientesController@factura');
 Route::post('registrarpacientes','PacientesController@store');

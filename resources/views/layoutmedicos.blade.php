@@ -26,7 +26,7 @@
                     <button type="button"  class="navbar-toggle collapsed" data-toggle="collapse"  id="menu-toggle">
                       <span  class="glyphicon glyphicon-th-large" aria-hidden="true" style="color: #fff;"></span>
                     </button>
-                    <a class="navbar-brand" href="/Darsalud/public" style="color: #966E30; padding-left: 14%; font-size: 25px;"><span class="fa fa-medkit"></span> <b>AGRAMONT</b></a>
+                    <a class="navbar-brand" href="/" style="color: #966E30; padding-left: 14%; font-size: 25px;"><span class="fa fa-medkit"></span> <b>AGRAMONT</b></a>
                 </div><!-- navbar-header-->
  
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

@@ -81,37 +81,7 @@
   </tbody>
 </table>
 </fieldset>
-<fieldset style="background-color:#EBD7BF; padding: 2%;">
-	<legend>Evaluaciones Psicologicas</legend>
-	<table id="example3" class="table table-hover" style="float:left; font-size:12px;">
-  <thead>
-    <tr>
-      <th width="20%">Fecha de evaluacion</th>
-      <th width="30%">Hora</th>
-      <th width="20%">Medico de turno</th>
-      <th data-orderable="false" width="5%">Ver</th> 
-    </tr>
-  </thead>
-  
-  <tbody style="font-size:11px;">
-      <?php if(count($evapsi)>0):?>
-      <tr>
-        <?php  
-          foreach ($evapsi as $evapsico):
-            $nombre=$evapsico->NOM_USU.' '.$evapsico->APA_USU.' '.$evapsico->AMA_USU;
-          ?>
-            <th><?php echo \Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$evapsico->FEC_PSI)->format('d-m-Y');?></th>
-            <th><?php echo \Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$evapsico->FEC_PSI)->format('H:i:s');?></th>
-            <th><?php echo $nombre; ?></th>
-            <th><span class="fa fa-file-text"></span></th> 
-    </tr>
-        <?php endforeach; endif;
-      
-      ?>
-    
-  </tbody>
-</table>
-</fieldset>
+
 <fieldset style="background-color:#C2EBBF; padding: 2%;">
 	<legend>Evaluaciones Oftalmologicas</legend>
 	<table id="example2" class="table table-hover" style="float:left; font-size:12px;">

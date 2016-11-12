@@ -48,7 +48,7 @@ class PacientesController extends Controller
       $paciente->SEX_PAC= $request->input('mgen_pac');
       $paciente->save();
       $mensaje="Datos de paciente modificados";
-      return redirect()->route('pacientessegip')->with('mensaje',$mensaje); 
+      return redirect()->route('pacientesagramont')->with('mensaje',$mensaje); 
 
     }
 
@@ -254,7 +254,7 @@ echo '<div style=" width:25%; height:auto;float:left; padding: 2%; margin-left:1
         $ticket->IMP_TIC=0;
         $ticket->save();
         $mensaje='Medico asignado a paciente';
-        return redirect()->route('pacientessegip')->with('mensaje',$mensaje); 
+        return redirect()->route('pacientesagramont')->with('mensaje',$mensaje); 
     }
     public function mticket(Request $request)
     {
@@ -266,7 +266,7 @@ echo '<div style=" width:25%; height:auto;float:left; padding: 2%; margin-left:1
         $ticket->IMP_TIC=0;
         $ticket->save();
         $mensaje='Reasignacion realizada correctamente';
-        return redirect()->route('pacientessegip')->with('mensaje',$mensaje); 
+        return redirect()->route('pacientesagramont')->with('mensaje',$mensaje); 
     }
     public function reservaticket(Request $request)
     {
@@ -283,7 +283,7 @@ echo '<div style=" width:25%; height:auto;float:left; padding: 2%; margin-left:1
         $reserva->ID_TIC=$ticket->id;
         $reserva->save();
         $mensaje='Reserva realizada correctamente';
-        return redirect()->route('pacientessegip')->with('mensaje',$mensaje); 
+        return redirect()->route('pacientesagramont')->with('mensaje',$mensaje); 
     }
     public function producto(Request $request)
     {
@@ -309,7 +309,7 @@ echo '<div style=" width:25%; height:auto;float:left; padding: 2%; margin-left:1
         $ticket->IMP_TIC=0;
         $ticket->save();
         $mensaje='Reserva satisfactoria';
-        return redirect()->route('pacientessegip')->with('mensaje',$mensaje); 
+        return redirect()->route('pacientesagramont')->with('mensaje',$mensaje); 
     }
     public function psicologica($id, $ids)
     {   $paciente= Paciente::find($id);
@@ -460,7 +460,7 @@ echo '<div style=" width:25%; height:auto;float:left; padding: 2%; margin-left:1
         $pacientes->ID_USU= Auth::user()->id;
         $pacientes->save();
         $mensaje='Usuario registrado correctamente';
-         return redirect()->route('pacientessegip')->with('mensaje',$mensaje); 
+         return redirect()->route('pacientesagramont')->with('mensaje',$mensaje); 
     }
 
     public function listapacientes()

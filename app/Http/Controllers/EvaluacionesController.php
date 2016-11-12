@@ -383,7 +383,7 @@ class EvaluacionesController extends Controller
         $pdf->SetAutoPageBreak(TRUE, 10);
         $pdf->SetMargins(15, 15, 10);
         $pdf->AddPage();
-         $pdf->Image('storage/cabecera.jpg', 0, 1, 215, 30, 'JPG', '', '', true, 250, '', false, false, false, false, false, false);
+         $pdf->Image('storage/cabecera2.jpg', 0, 1, 155, 20, 'JPG', '', '', true, 250, '', false, false, false, false, false, false);
         
         $pdf->SetFont('','B','9');
         $pdf->SetXY(10, 39);
@@ -587,10 +587,7 @@ class EvaluacionesController extends Controller
         $pdf->Rect ( 55,45,5,5,'','', '');
         $pdf->Rect ( 102,45,5,5,'','', '');
         
-         $pdf->SetXY(15, 168);
-         $pdf->SetFont('','B','8');
-        $pdf->Write(0,'RESULTADO FINAL DE LA EVALUACION OFTALMOLOGICA','','',false);
-        $pdf->SetXY(15, 170);
+         
          $pdf->SetFont('','B','8');
         
          $pdf->SetXY(10, 202);

@@ -128,15 +128,7 @@
                     </div>
             </fieldset>
              <br/><br/><br/>
-<fieldset style="background-color:#E3CFD3; padding: 2%;">
-    <legend>RESULTADO FINAL DE LA EVALUACION OTORRINOLARINGOLOGICA</legend>
-    <div class="form-group">
-        <label class="col-lg-11">OBSERVACIONES:(EN ESTE ACAPITE SE DEBE INCORPORAR SI EL POSTULANTE ES APTO PARA CONDUCIR VEHICULO, SI NO FUERA APTO INDICAR LOS MOTIVOS)</label>
-        <div class="col-lg-11">
-            <textarea required="yes" name="rfi_oto" class="form-control" rows="3">APTO PARA CONDUCIR CATEGORIA " " </textarea>
-        </div>
-    </div>
-</fieldset>   
+
 <div class = "modal-footer">
             <button type = "submit" target="_blank" class = "btn btn-primary" data-dismiss = "modal"><span class="glyphicon glyphicon-check"></span>
               IMPRIMIR EVALUACION

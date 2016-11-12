@@ -31,7 +31,7 @@
                     <button type="button"  class="navbar-toggle collapsed" data-toggle="collapse"  id="menu-toggle">
                       <span  class="glyphicon glyphicon-th-large" aria-hidden="true" style="color: #fff;"></span>
                     </button>
-                    <a class="navbar-brand" href="/Darsalud/public" style="color: #21D3F3; padding-left: 14%; font-size: 25px;"><span class="fa fa-medkit"></span> <b>DARSALUD</b></a>
+                    <a class="navbar-brand" href="/" style="color: #21D3F3; padding-left: 14%; font-size: 25px;"><span class="fa fa-medkit"></span> <b>DARSALUD</b></a>
                 </div><!-- navbar-header-->
  
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -60,8 +60,8 @@
                 <li>
                     <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-ambulance fa-stack-1x "></i></span> Consultas</a>
                     <ul class="nav-pills nav-stacked" style="list-style-type:none;">
-                        <li><a href="{{ url('pacientessegip') }}"><span class="fa-stack fa-lg pull-left"><i class="fa fa-medkit fa-stack-1x "></i></span>Consulta Externa</a></li>
-                        <li><a href="{{ url('pacientessegip') }}"><span class="fa-stack fa-lg pull-left"><i class="fa fa-medkit fa-stack-1x "></i></span>Recetas</a></li>
+                        <li><a href="{{ url('pacientesagramont') }}"><span class="fa-stack fa-lg pull-left"><i class="fa fa-medkit fa-stack-1x "></i></span>Consulta Externa</a></li>
+                        <li><a href="{{ url('pacientesagramont') }}"><span class="fa-stack fa-lg pull-left"><i class="fa fa-medkit fa-stack-1x "></i></span>Recetas</a></li>
                         <li><a href="{{ url('pacientesdarsalud') }}"><span class="fa-stack fa-lg pull-left"><i class="fa fa-medkit fa-stack-1x "></i></span>Laboratorios</a></li>
                         <li><a href="{{ url('facturacion') }}"><span class="fa-stack fa-lg pull-left"><i class="fa fa-medkit fa-stack-1x "></i></span>Evaluacion oftalmologica</a></li>
  

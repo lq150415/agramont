@@ -58,7 +58,7 @@ function limita(elEvento, maximoCaracteres) {
     <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header fixed-brand" >
                     
-                    <a class="navbar-brand" href="/Darsalud/public" style="color: #966E30; padding-left: 14%; font-size: 25px;"><span class="fa fa-medkit"></span> <b>AGRAMONT</b></a>
+                    <a class="navbar-brand" href="/" style="color: #966E30; padding-left: 14%; font-size: 25px;"><span class="fa fa-medkit"></span> <b>AGRAMONT</b></a>
                 </div><!-- navbar-header-->
  
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

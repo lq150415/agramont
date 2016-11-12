@@ -57,7 +57,7 @@
 </style>
 
     <div id="grande">
-    <a href="pacientessegip"><div id="uno"></div></a>
+    <a href="pacientesagramont"><div id="uno"></div></a>
     <a href="#"><div id="dos"></div></a><br/><br/><br/>
     <a href="farmacia"><div id="tres"></div></a>
     <a href="reservas"><div id="cuatro"></div></a>
