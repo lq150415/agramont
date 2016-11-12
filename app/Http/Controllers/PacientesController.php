@@ -324,7 +324,11 @@ echo '<div style=" width:25%; height:auto;float:left; padding: 2%; margin-left:1
     {   $paciente= Paciente::find($id);
         $tickets= Ticket::find($ids);
         $iddatos= EvaMedi::where('ID_TIC','=',$ids)->select('id')->first();
+        if($iddatos){
         $idmed = $iddatos->id;
+        }else{
+            $idmed=1929203734729;
+        }
         $datos= EvaMedi::find($idmed);
         $tickets->EST_TIC=1;
         $tickets->save();

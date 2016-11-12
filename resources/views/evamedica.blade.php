@@ -156,7 +156,7 @@ $(document).ready(function(){
             <fieldset style="background-color:#B9DEE3; padding: 2%;">
                 <legend>I. ANTECEDENTES</legend>
                 <div class="form-group">
-                    <label class="col-lg-4">ANTECEDENTES RELACIONADOS CON LA CONDUCCION : </label>
+                    <label class="col-lg-4">ANTECEDENTES PERSONALES NO PATOLOGICOS : </label>
                     <div class="col-lg-8">
                         <textarea rows="5" id="texto" onkeypress="return limita(event, 212);" class="form-control" name="aco_med" value="{{ $datos->ACO_MED}}">{{$datos->ACO_MED}}</textarea>
                     </div>
@@ -594,78 +594,6 @@ $(document).ready(function(){
                     </div>  
                 </fieldset>
                  <br/><br/>
-<fieldset style="background-color:#E3CFD3; padding: 2%;">
-    <legend>RESULTADO FINAL DE LA CERTIFICACION MEDICA</legend>
-    <div class="form-group">
-        <label class="col-lg-11">OBSERVACIONES:(EN ESTE ACAPITE SE DEBE INCORPORAR SI EL POSTULANTE ES APTO PARA CONDUCIR VEHICULO, SI NO FUERA APTO INDICAR LOS MOTIVOS)</label>
-        <div class="col-lg-4">
-           <select class="form-control" id="apto" name="apt_med" required>
-            <option value="">SELECCIONE</option>
-            <option value="1" <?php if($datos->APT_MED=='1'){
-                      echo 'selected'; }?> >APTO PARA CONDUCIR LA CATEGORIA</option>
-            <option value="2" <?php if($datos->APT_MED=='2'){
-                      echo 'selected'; }?> >NO APTO PARA CONDUCIR</option>
-            </select>
-            </div>
-        <div style="display: none;" id="catapto" name="rfi_med">
-        <div class="col-lg-1"> 
-            <select class="form-control" name="rfi_med" >
-            <option value="A" <?php if($datos->RFI_MED=='A'){
-                      echo 'selected'; }?> >A</option>
-            <option value="B" <?php if($datos->RFI_MED=='B'){
-                      echo 'selected'; }?> >B</option>
-            <option value="C" <?php if($datos->RFI_MED=='C'){
-                      echo 'selected'; }?> >C</option>
-            <option value="P" <?php if($datos->RFI_MED=='P'){
-                      echo 'selected'; }?> >P</option>
-            <option value="M" <?php if($datos->RFI_MED=='M'){
-                      echo 'selected'; }?> >M</option>
-            <option value="T" <?php if($datos->RFI_MED=='T'){
-                      echo 'selected'; }?> >T</option>
-            </select>
-        </div>
-        <div class="col-lg-3" >
-        SEGUNDA CATEGORIA
-            <select class="form-control" name="rfs_med" >
-            <option value="">SELECCIONE</option>
-           <option value="A" <?php if($datos->RFS_MED=='A'){
-                      echo 'selected'; }?> >A</option>
-            <option value="B" <?php if($datos->RFS_MED=='B'){
-                      echo 'selected'; }?> >B</option>
-            <option value="C" <?php if($datos->RFS_MED=='C'){
-                      echo 'selected'; }?> >C</option>
-            <option value="P" <?php if($datos->RFS_MED=='P'){
-                      echo 'selected'; }?> >P</option>
-            <option value="M" <?php if($datos->RFS_MED=='M'){
-                      echo 'selected'; }?> >M</option>
-            <option value="T" <?php if($datos->RFS_MED=='T'){
-                      echo 'selected'; }?> >T</option>
-            </select>
-        </div>
-        <div class="col-lg-3">
-        TERCERA CATEGORIA
-            <select class="form-control" name="rft_med">
-            <option value="">SELECCIONE</option>
-            <option value="A" <?php if($datos->RFT_MED=='A'){
-                      echo 'selected'; }?>>A</option>
-            <option value="B" <?php if($datos->RFT_MED=='B'){
-                      echo 'selected'; }?>>B</option>
-            <option value="C" <?php if($datos->RFT_MED=='C'){
-                      echo 'selected'; }?>>C</option>
-            <option value="P" <?php if($datos->RFT_MED=='P'){
-                      echo 'selected'; }?>>P</option>
-            <option value="M" <?php if($datos->RFT_MED=='M'){
-                      echo 'selected'; }?>>M</option>
-            <option value="T" <?php if($datos->RFT_MED=='T'){
-                      echo 'selected'; }?>>T</option>
-            </select>
-        </div>
-        </div>
-        <div style="display:none;" id="noapto">
-            <textarea cols="70" rows="4" name="mna_med">{{$datos->MNA_MED}}</textarea>
-        </div>
-    </div>
-</fieldset>   
 
 
     <?php else: ?>
@@ -692,7 +620,7 @@ $(document).ready(function(){
             <fieldset style="background-color:#B9DEE3; padding: 2%;">
                 <legend>I. ANTECEDENTES</legend>
                 <div class="form-group">
-                    <label class="col-lg-4">ANTECEDENTES RELACIONADOS CON LA CONDUCCION : </label>
+                    <label class="col-lg-4">ANTECEDENTES PERSONALES NO PATOLOGICOS : </label>
                     <div class="col-lg-8">
                         <textarea rows="5" id="texto" onkeypress="return limita(event, 212);" class="form-control" name="aco_med" value="{{ $paciente->PRO_PAC}}"></textarea>
                     </div>
@@ -1106,58 +1034,6 @@ $(document).ready(function(){
                     </div>  
                 </fieldset>
                  <br/><br/>
-<fieldset style="background-color:#E3CFD3; padding: 2%;">
-    <legend>RESULTADO FINAL DE LA CERTIFICACION MEDICA</legend>
-    <div class="form-group">
-        <label class="col-lg-11">OBSERVACIONES:(EN ESTE ACAPITE SE DEBE INCORPORAR SI EL POSTULANTE ES APTO PARA CONDUCIR VEHICULO, SI NO FUERA APTO INDICAR LOS MOTIVOS)</label>
-        <div class="col-lg-4">
-           <select class="form-control" id="apto" name="apt_med" required>
-            <option value="">SELECCIONE</option>
-            <option value="1">APTO PARA CONDUCIR LA CATEGORIA</option>
-            <option value="2">NO APTO PARA CONDUCIR</option>
-            </select>
-            </div>
-        <div style="display: none;" id="catapto" name="rfi_med">
-        <div class="col-lg-1"> 
-            <select class="form-control" name="rfi_med" >
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-            <option value="P">P</option>
-            <option value="M">M</option>
-            <option value="T">T</option>
-            </select>
-        </div>
-        <div class="col-lg-3" >
-        SEGUNDA CATEGORIA
-            <select class="form-control" name="rfs_med" >
-            <option value="">SELECCIONE</option>
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-            <option value="P">P</option>
-            <option value="M">M</option>
-            <option value="T">T</option>
-            </select>
-        </div>
-        <div class="col-lg-3">
-        TERCERA CATEGORIA
-            <select class="form-control" name="rft_med">
-            <option value="">SELECCIONE</option>
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-            <option value="P">P</option>
-            <option value="M">M</option>
-            <option value="T">T</option>
-            </select>
-        </div>
-        </div>
-        <div style="display:none;" id="noapto">
-            <textarea cols="70" rows="4" name="mna_med"></textarea>
-        </div>
-    </div>
-</fieldset>   
 <?php endif;?>
         </form>          
 

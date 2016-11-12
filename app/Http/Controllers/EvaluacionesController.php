@@ -93,7 +93,7 @@ class EvaluacionesController extends Controller
         $pdf->SetAutoPageBreak(TRUE, 10);
         $pdf->SetMargins(15, 15, 10);
         $pdf->AddPage();
-        
+         $pdf->Image('storage/cabecera.jpg', 0, 1, 215, 30, 'JPG', '', '', true, 250, '', false, false, false, false, false, false);
         
         $pdf->SetFont('','B','9');
         $pdf->SetXY(15, 35);
@@ -383,7 +383,7 @@ class EvaluacionesController extends Controller
         $pdf->SetAutoPageBreak(TRUE, 10);
         $pdf->SetMargins(15, 15, 10);
         $pdf->AddPage();
-        
+         $pdf->Image('storage/cabecera.jpg', 0, 1, 215, 30, 'JPG', '', '', true, 250, '', false, false, false, false, false, false);
         
         $pdf->SetFont('','B','9');
         $pdf->SetXY(10, 39);
@@ -646,7 +646,7 @@ class EvaluacionesController extends Controller
         $pdf->SetAutoPageBreak(TRUE, 10);
         $pdf->SetMargins(15, 15, 10);
         $pdf->AddPage();
-        
+         $pdf->Image('storage/cabecera.jpg', 0, 1, 215, 30, 'JPG', '', '', true, 250, '', false, false, false, false, false, false);
         
         $pdf->SetFont('','B','9');
         $pdf->SetXY(15, 42);
@@ -1004,7 +1004,7 @@ class EvaluacionesController extends Controller
         $pdf->SetAutoPageBreak(TRUE, 10);
         $pdf->SetMargins(15, 15, 10);
         $pdf->AddPage();
-        
+         $pdf->Image('storage/cabecera.jpg', 0, 1, 215, 30, 'JPG', '', '', true, 250, '', false, false, false, false, false, false);
         $pdf->Line ( 20, 50,55,50,array('width' => 0.3,'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)));
         $pdf->Line ( 60, 50,95,50,array('width' => 0.3,'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)));
         $pdf->Line ( 105, 50,155,50,array('width' => 0.3,'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)));
@@ -1333,6 +1333,7 @@ class EvaluacionesController extends Controller
         $pdf->Write(0,'Cuello:','','',false);
         
         $pdf->AddPage();
+         $pdf->Image('storage/cabecera.jpg', 0, 1, 215, 30, 'JPG', '', '', true, 250, '', false, false, false, false, false, false);
         $pdf->SetFont('','','8');
         $pdf->SetXY(65, 50);
         $pdf->Write(0,$request->input('eoe_med'),'','',false);
