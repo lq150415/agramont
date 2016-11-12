@@ -300,15 +300,7 @@ class EvaluacionesController extends Controller
         $pdf->Rect ( 82,200,8,8,'','', '');
         $pdf->Rect ( 125,200,8,8,'','', '');
         $pdf->Rect ( 165,200,8,8,'','', '');
-         $pdf->SetXY(15, 213);
-         $pdf->SetFont('','B','9');
-        $pdf->Write(0,'RESULTADO FINAL DE LA EVALUACION PSICOLOGICA','','',false);
-        $pdf->SetXY(15, 218);
-         $pdf->SetFont('','B','8');
-        $pdf->Write(0,'OBSERVACIONES: (EN ESTE ACAPITE INCORPORAR SI EL POSTULANTE ES APTO PARA CONDUCIR VEHICULO, SI NO FUERA APTO INDICAR LOS MOTIVOS)','','',false);
-        $pdf->SetXY(15, 227);
-        $pdf->SetFont('','S','9');
-        $pdf->Write(0,$request->input('rfi_psi'),'','',false);
+        
         $pdf->Line ( 30, 263,70,263,array('width' => 0.3,'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)));
         $pdf->Line ( 80, 263,120,263,array('width' => 0.3,'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)));
         $pdf->Line ( 130, 263,165,263,array('width' => 0.3,'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)));
@@ -323,7 +315,7 @@ class EvaluacionesController extends Controller
         $pdf->Write(0,'FIRMA PSICOLOGO/A','','',false);
         $pdf->SetXY(180,230);
         $pdf->SetFont('','','11');
-        $pdf->write2DBarcode ( 'Paciente :'.$paciente[0]->NOM_PAC.' '.$paciente[0]->APA_PAC.' '.$paciente[0]->AMA_PAC.' | Medico: '.Auth::user()->NOM_USU.' '.Auth::user()->APA_USU.' '.Auth::user()->AMA_USU.' | Fecha:'.Carbon::now(), 'QRCODE,M', 170, 230, 30, 30, '','','');
+        
         $pdf->Output('EvaluacionPsicologica.pdf');
     }
 
@@ -610,7 +602,7 @@ class EvaluacionesController extends Controller
         $pdf->Write(0,'SELLO FIRMA OFTALMOLOGO/A','','',false);
         $pdf->SetXY(180,180);
         $pdf->SetFont('','','11');
-        $pdf->write2DBarcode ( 'Paciente :'.$paciente[0]->NOM_PAC.' '.$paciente[0]->APA_PAC.' '.$paciente[0]->AMA_PAC.' | Optometra: '.Auth::user()->NOM_USU.' '.Auth::user()->APA_USU.' '.Auth::user()->AMA_USU.' | Fecha:'.Carbon::now().'|Dar salud| Ev.'.$oftalmo->id, 'QRCODE,M', 110, 185, 25, 25, '','','');
+        
         $pdf->Output('EvaluacionOftalmologica.pdf');
     }
 
@@ -745,17 +737,7 @@ class EvaluacionesController extends Controller
         $pdf->SetXY(18, 178);
         $pdf->SetFont('','','10');
         $pdf->Write(0,$request->input('con_oto'),'','',false);
-        $pdf->SetFont('','B','7');
        
-         $pdf->SetXY(15, 213);
-         $pdf->SetFont('','B','9');
-        $pdf->Write(0,'RESULTADO FINAL DE LA EVALUACION OTORRINOLARINGOLOGICA','','',false);
-        $pdf->SetXY(15, 218);
-         $pdf->SetFont('','B','8');
-        $pdf->Write(0,'OBSERVACIONES: (EN ESTE ACAPITE INCORPORAR SI EL POSTULANTE ES APTO PARA CONDUCIR VEHICULO, SI NO FUERA APTO INDICAR LOS MOTIVOS)','','',false);
-        $pdf->SetXY(15, 227);
-        $pdf->SetFont('','S','9');
-        $pdf->Write(0,$request->input('rfi_oto'),'','',false);
         $pdf->Line ( 30, 263,70,263,array('width' => 0.3,'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)));
         $pdf->Line ( 80, 263,120,263,array('width' => 0.3,'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)));
         $pdf->Line ( 130, 263,165,263,array('width' => 0.3,'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)));
@@ -770,7 +752,7 @@ class EvaluacionesController extends Controller
         $pdf->Write(0,'FIRMA OTORRINOLARINGOLOGIA','','',false);
         $pdf->SetXY(180,230);
         $pdf->SetFont('','','11');
-        $pdf->write2DBarcode ( 'Paciente :'.$paciente[0]->NOM_PAC.' '.$paciente[0]->APA_PAC.' '.$paciente[0]->AMA_PAC.' | Medico: '.Auth::user()->NOM_USU.' '.Auth::user()->APA_USU.' '.Auth::user()->AMA_USU.' | Fecha:'.Carbon::now().' | DARSALUD', 'QRCODE,M', 170, 230, 30, 30, '','','');
+        
         $pdf->Output('EvaluacionOtorrino.pdf');
     }
     public function pdfmedi(Request $request,$id,$ids)
@@ -1084,7 +1066,7 @@ class EvaluacionesController extends Controller
         $pdf->SetXY(15, 75);
         $pdf->Write(0,'I. ANTECEDENTES','','',false);
         $pdf->SetXY(10, 80);
-        $pdf->Write(0,'Antecedentes relacionados con la conduccion:','','',false);
+        $pdf->Write(0,'Antecedentes personales no patologicos','','',false);
         $pdf->SetXY(85, 80);
         $pdf->SetFont('','','9');     
         $pdf->MultiCell(115, 2, $request->input('aco_med') , 0, 'L', 0, 0, '', '', true);
@@ -1349,7 +1331,7 @@ class EvaluacionesController extends Controller
         $pdf->Write(0,'Cara:','','',false);
         $pdf->SetXY(24, 195);
         $pdf->Write(0,'Cuello:','','',false);
-        $pdf->write2DBarcode ( 'Paciente :'.$paciente[0]->NOM_PAC.' '.$paciente[0]->APA_PAC.' '.$paciente[0]->AMA_PAC.' | Medico: '.Auth::user()->NOM_USU.' '.Auth::user()->APA_USU.' '.Auth::user()->AMA_USU.' | Fecha:'.Carbon::now().' | DARSALUD | Ev. '.$medica->id, 'QRCODE,M', 185, 245, 20, 20, '','','');
+        
         $pdf->AddPage();
         $pdf->SetFont('','','8');
         $pdf->SetXY(65, 50);
@@ -1515,35 +1497,7 @@ class EvaluacionesController extends Controller
          $pdf->SetXY(35, 218);
         $pdf->Write(0,'Requiere de evaluacion psicosensometrica:','','',false);
 
-        $pdf->SetFont('','B','7');
-        $pdf->SetXY(15, 224);
-        $pdf->SetFont('','B','10');
-        $pdf->Write(0,'RESULTADO FINAL CERTIFICACION MEDICA','','',false);
-        $pdf->SetXY(15, 230);
-        $pdf->SetFont('','B','8');
-        $pdf->Write(0,'OBSERVACIONES: (EN ESTE ACAPITE INCORPORAR SI EL POSTULANTE ES APTO PARA CONDUCIR VEHICULO, SI NO FUERA APTO INDICAR LOS MOTIVOS)','','',false);
-
-        if($request->input('apt_med')==1){
-        $pdf->SetXY(60, 239);
-        $pdf->SetFont('','UB','11');
-        $pdf->Write(0,'APTO PARA CONDUCIR CATEGORIA "'.$request->input('rfi_med').'"','','',false);
-        }else{
-        $pdf->SetXY(20, 237);
-        $pdf->SetFont('','UB','10');
-        $pdf->MultiCell(150, 2, 'NO APTO PARA CONDUCIR - '.$request->input('mna_med'), 0, 'L', 0, 0, '', '', true);
-        } 
-        if(($request->input('rfs_med')!='') && ($request->input('rft_med')==''))
-            {
-            $pdf->SetXY(137, 239);
-            $pdf->SetFont('','UB','11');
-            $pdf->Write(0,' Y "'.$request->input('rfs_med').'"','','',false);
-            }        
-        if(($request->input('rfs_med')!='')&&($request->input('rft_med')!=''))
-            {
-            $pdf->SetXY(137, 239);
-            $pdf->SetFont('','UB','11');
-            $pdf->Write(0,', "'.$request->input('rfs_med').'" Y "'.$request->input('rft_med').'"','','',false);
-            }        
+       
         $pdf->Line ( 30, 263,70,263,array('width' => 0.3,'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)));
         $pdf->Line ( 80, 263,120,263,array('width' => 0.3,'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)));
         $pdf->Line ( 130, 263,165,263,array('width' => 0.3,'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)));
@@ -1558,7 +1512,7 @@ class EvaluacionesController extends Controller
         $pdf->Write(0,'FIRMA DEL MEDICO','','',false);
         $pdf->SetXY(180,230);
         $pdf->SetFont('','','11');
-        $pdf->write2DBarcode ( 'Paciente :'.$paciente[0]->NOM_PAC.' '.$paciente[0]->APA_PAC.' '.$paciente[0]->AMA_PAC.' | Medico: '.Auth::user()->NOM_USU.' '.Auth::user()->APA_USU.' '.Auth::user()->AMA_USU.' | Fecha:'.Carbon::now().' | DARSALUD | Ev. '.$medica->id, 'QRCODE,M', 175, 235, 25, 25, '','','');
+        
         $pdf->Output('EvaluacionMedica.pdf');
     }
     }
@@ -1633,7 +1587,7 @@ class EvaluacionesController extends Controller
         $pdf->SetXY(15, 75);
         $pdf->Write(0,'I. ANTECEDENTES','','',false);
         $pdf->SetXY(10, 80);
-        $pdf->Write(0,'Antecedentes relacionados con la conduccion:','','',false);
+        $pdf->Write(0,'Antecedentes personales no patologicos','','',false);
         $pdf->SetXY(85, 80);
         $pdf->SetFont('','','9');     
         $pdf->MultiCell(115, 2, $medica->ACO_MED , 0, 'L', 0, 0, '', '', true);
@@ -1898,7 +1852,7 @@ class EvaluacionesController extends Controller
         $pdf->Write(0,'Cara:','','',false);
         $pdf->SetXY(24, 195);
         $pdf->Write(0,'Cuello:','','',false);
-        $pdf->write2DBarcode ( 'Paciente :'.$paciente[0]->NOM_PAC.' '.$paciente[0]->APA_PAC.' '.$paciente[0]->AMA_PAC.' | Medico: '.Auth::user()->NOM_USU.' '.Auth::user()->APA_USU.' '.Auth::user()->AMA_USU.' | Fecha:'.Carbon::now().' | DARSALUD | Ev. '.$medica->id, 'QRCODE,M', 185, 245, 20, 20, '','','');
+        
         $pdf->AddPage();
         $pdf->Image('storage/cabecera.jpg', 0, 1, 215, 30, 'JPG', '', '', true, 250, '', false, false, false, false, false, false);
         $pdf->SetFont('','','8');
@@ -2065,35 +2019,7 @@ class EvaluacionesController extends Controller
          $pdf->SetXY(35, 218);
         $pdf->Write(0,'Requiere de evaluacion psicosensometrica:','','',false);
 
-        $pdf->SetFont('','B','7');
-        $pdf->SetXY(15, 224);
-        $pdf->SetFont('','B','10');
-        $pdf->Write(0,'RESULTADO FINAL CERTIFICACION MEDICA','','',false);
-        $pdf->SetXY(15, 230);
-        $pdf->SetFont('','B','8');
-        $pdf->Write(0,'OBSERVACIONES: (EN ESTE ACAPITE INCORPORAR SI EL POSTULANTE ES APTO PARA CONDUCIR VEHICULO, SI NO FUERA APTO INDICAR LOS MOTIVOS)','','',false);
-
-        if($medica->APT_MED==1){
-        $pdf->SetXY(60, 239);
-        $pdf->SetFont('','UB','11');
-        $pdf->Write(0,'APTO PARA CONDUCIR CATEGORIA "'.$medica->RFI_MED.'"','','',false);
-        }else{
-        $pdf->SetXY(20, 237);
-        $pdf->SetFont('','UB','10');
-        $pdf->MultiCell(150, 2, 'NO APTO PARA CONDUCIR - '.$medica->MNA_MED, 0, 'L', 0, 0, '', '', true);
-        } 
-        if(($medica->RFS_MED!='') && ($medica->RFT_MED==''))
-            {
-            $pdf->SetXY(137, 239);
-            $pdf->SetFont('','UB','11');
-            $pdf->Write(0,' Y "'.$medica->RFS_MED.'"','','',false);
-            }        
-        if(($medica->RFS_MED!='')&&($medica->RFT_MED!=''))
-            {
-            $pdf->SetXY(137, 239);
-            $pdf->SetFont('','UB','11');
-            $pdf->Write(0,', "'.$medica->RFS_MED.'" Y "'.$medica->RFT_MED.'"','','',false);
-            }        
+      
         $pdf->Line ( 30, 263,70,263,array('width' => 0.3,'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)));
         $pdf->Line ( 80, 263,120,263,array('width' => 0.3,'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)));
         $pdf->Line ( 130, 263,165,263,array('width' => 0.3,'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)));
@@ -2108,7 +2034,7 @@ class EvaluacionesController extends Controller
         $pdf->Write(0,'FIRMA DEL MEDICO','','',false);
         $pdf->SetXY(180,230);
         $pdf->SetFont('','','11');
-        $pdf->write2DBarcode ( 'Paciente :'.$paciente[0]->NOM_PAC.' '.$paciente[0]->APA_PAC.' '.$paciente[0]->AMA_PAC.' | Medico: '.Auth::user()->NOM_USU.' '.Auth::user()->APA_USU.' '.Auth::user()->AMA_USU.' | Fecha:'.Carbon::now().' | DARSALUD | Ev. '.$medica->id, 'QRCODE,M', 175, 235, 25, 25, '','','');
+        
         $pdf->Output('EvaluacionMedica.pdf');
     }
      public function pdfreceta(Request $request,$id)
@@ -2198,7 +2124,7 @@ class EvaluacionesController extends Controller
         $pdf->Write(0,'FECHA DEL EXAMEN','','',false);
         $pdf->Line ( 16, 95,205,95,array('width' => 0.3,'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 0)));
         
-        $pdf->write2DBarcode ( 'Paciente :'.$paciente[0]->NOM_PAC.' '.$paciente[0]->APA_PAC.' '.$paciente[0]->AMA_PAC.' | Medico: '.Auth::user()->NOM_USU.' '.Auth::user()->APA_USU.' '.Auth::user()->AMA_USU.' | Fecha:'.$receta->FEC_REC, 'QRCODE,M', 170, 230, 30, 30, '','','');
+       
         $pdf->Output('EvaluacionPsicologica.pdf');
     }
 
